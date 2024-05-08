@@ -55,8 +55,7 @@ Visión:
 
     Para inquilinos de departamentos o cuartos, quienes tienen la necesidad de sentirse seguros sin que personas ajenas invadan su privacidad 
     o que se sientan atacados, el producto Secure Tenant es un mecanismo de seguridad especialmente para personas que viven en constante inseguridad. 
-    A diferencia de otros sistemas de seguridad que tienen una alarma incontrolable,
-    Secure Tenant permite el control de la alarma que es activada mediante un botón en cuanto se tenga una emergencia. 
+    El producto Secure Tenant permite el control de una alarma que es activada mediante un botón en cuanto se tenga una emergencia. 
 
 Como consejo derivado de mi experiencia para la utilización de este patrón de forma positiva, si hay elementos en negativo en la parte de A DIFERENCIA DE, propongo escribirlos en positivo en NUESTRO PRODUCTO, convierte nuestro mensaje en más positivo y por tanto en más poderoso.
 
