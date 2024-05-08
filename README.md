@@ -75,14 +75,14 @@ Referencia:
 
 ## Funcionalidades
 
-| Id | Historia de usuario | Prioridad | Estimación | Como probarlo | Responsable |
-|----|---------------------|-----------|------------|---------------|-------------|
-|    |                     |           |            |               |             |
-|    |                     |           |            |               |             |
-|    |                     |           |            |               |             |
+| Id |                             Historia de usuario                                           | Prioridad | Estimación | Como probarlo |     Responsable        |
+|----|-------------------------------------------------------------------------------------------|-----------|------------|---------------|------------------------|
+|  1 | Como inquilino quiero que el mecanismo me permita encender la alarma con un botón.        |   Alta    |   3 días   |               | Maribel Ramírez Torres |
+|  2 | Como inquilino quiero que el sistema de seguridad sea sencillo de manipular.              |   Alta    |   3 días   |               | Maribel Ramírez Torres |
+|  3 | Como inquilino quiero que el botón se encuentre en zonas de fácil acceso en la habitación.|   Alta    |   2 días   |               | Maribel Ramírez Torres |
 
 ## Prototipo en dibujo
-- Coloca la imagen de tu proyecto al iniciar el desarrollo
+- ![image](https://github.com/Marib117uwu/Security_System/assets/135056294/be904088-81b8-47f8-9eaf-8764610723f6)
 
 # Evidencias de funcionamiento
 - Captura de pantalla de flujos de Node RED
