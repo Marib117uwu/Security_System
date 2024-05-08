@@ -17,11 +17,11 @@
 
 
 ## Lista de Software utilizado
-| Id | Software | Version | Tipo |
-|----|----------|---------|------|
-|    |          |         |      |
-|    |          |         |      |
-|    |          |         |      |
+| Id | Software | Version |  Tipo   |
+|----|----------|---------|---------|
+|  1 |  Thonny  | 2.7.18  |         |
+|  2 | Node-Red | 3.1.9   |         |
+|  3 |PostgreSQL| 16.1    |         |
 
 ## Visión del producto
 ¿Como generar la visión del proyecto?
