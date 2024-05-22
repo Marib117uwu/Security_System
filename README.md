@@ -50,6 +50,7 @@ Visión:
 
 # Evidencias de funcionamiento
 - Captura de pantalla de flujos de Node RED
+  ![image](https://github.com/Marib117uwu/Security_System/assets/135056294/6dcb4c1f-52ef-4981-8b8c-09b539e52490)
 - Captura de las pantallas del proyecto DASHBOARD y Pantalla de la ESP32
 - Video demostrativo de las funcionalidades del proyecto
 - Código fuente (PROHIBIDO PONER COMPRIMIDOS)
