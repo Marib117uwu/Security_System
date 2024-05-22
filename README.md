@@ -17,11 +17,11 @@
 
 
 ## Lista de Software utilizado
-| Id | Software | Version |  Tipo   |
-|----|----------|---------|---------|
-|  1 |  Thonny  | 2.7.18  |         |
-|  2 | Node-Red | 3.1.9   |         |
-|  3 |PostgreSQL| 16.1    |         |
+| Id | Software | Version | 
+|----|----------|---------|
+|  1 |  Thonny  | 2.7.18  |         
+|  2 | Node-Red | 3.1.9   |         
+|  3 |PostgreSQL| 16.1    |         
 
 ## Visión del producto
 Visión:
@@ -38,11 +38,11 @@ Visión:
 
 ## Funcionalidades
 
-| Id |                             Historia de usuario                                           | Prioridad | Estimación |              Como probarlo                    |     Responsable        |
-|----|-------------------------------------------------------------------------------------------|-----------|------------|-----------------------------------------------|------------------------|
-|  1 | Como inquilino quiero que el mecanismo me permita encender la alarma con un botón.        |   Alta    |   2 días   |Poniendo a prueba el funcionamiento del código.| Maribel Ramírez Torres |
-|  2 | Como inquilino quiero que el sistema de seguridad sea sencillo de manipular.              |   Alta    |   2 horas  |Haciendo pruebas de uso del prototipo.         | Maribel Ramírez Torres |
-|  3 | Como inquilino quiero que se registre fecha y hora cuando haya emergencias.               |   Alta    |   1 día    |                                               | Maribel Ramírez Torres |
+| Id |                             Historia de usuario                                           | Prioridad | Estimación |              Como probarlo                           |     Responsable        |
+|----|-------------------------------------------------------------------------------------------|-----------|------------|------------------------------------------------------|------------------------|
+|  1 | Como inquilino quiero que el mecanismo me permita encender la alarma con un botón.        |   Alta    |   2 días   |Poniendo a prueba el funcionamiento del código.       | Maribel Ramírez Torres |
+|  2 | Como inquilino quiero que el sistema de seguridad sea sencillo de manipular.              |   Alta    |   2 horas  |Haciendo pruebas de uso del prototipo.                | Maribel Ramírez Torres |
+|  3 | Como inquilino quiero que se registre fecha y hora cuando haya emergencias.               |   Alta    |   1 día    |Dar click en el botón y verificar si se hizo registro.| Maribel Ramírez Torres |
 
 ## Prototipo en dibujo
 - ![image](https://github.com/Marib117uwu/Security_System/assets/135056294/95a5789d-87df-4374-b587-ce96f2cd02d9)
