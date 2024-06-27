@@ -60,4 +60,147 @@ Visión:
   ![image](https://github.com/Marib117uwu/Security_System/assets/135056294/d3e1ec5d-a5af-44ba-bb2e-905f0463ff04)
 
 - Video demostrativo de las funcionalidades del proyecto
+  ENLACE
+  https://mega.nz/file/lSt2QRxJ#v3ZzwyyO-y8jYfQYM7lAeV7ug6pEpqK6qQ_VOAj0Ah4
+  
 - Código fuente (PROHIBIDO PONER COMPRIMIDOS)
+  
+        import time
+        from machine import Pin, PWM
+        from umqtt.simple import MQTTClient
+        import json
+        
+        ssid = "OPPOA17"
+        password = "z99sksdu"
+        mqtt_server = "192.168.221.21"
+        topicboton = "puerta/estado"
+        topicvirtual = "estado/virtual"
+        client_id = "ESP32"
+        
+        # Configuración del botón
+        boton_pin = 12
+        boton = Pin(boton_pin, Pin.IN, Pin.PULL_UP)
+        
+        # Configuración de led
+        led = Pin(4, Pin.OUT)
+        
+        # Configuración de buzzer
+        buzzer = PWM(Pin(13), freq=440, duty=0)
+        
+        # Función para emitir sonidos
+        def sonido(frecuencia, duracion):
+            buzzer.freq(frecuencia)
+            buzzer.duty(512)
+            time.sleep(duracion)
+            buzzer.duty(0)
+        
+        # Conectar a la red WiFi
+        def connect_wifi():
+            wlan = network.WLAN(network.STA_IF)
+            wlan.active(True)
+            wlan.connect(ssid, password)
+            while not wlan.isconnected():
+                print('Conectando a la red WiFi...')
+                time.sleep(1)
+            print('Conectado a la red WiFi:', wlan.ifconfig())
+        
+        # Función de callback para manejar los mensajes MQTT entrantes
+        def mqtt_callback(topic, msg):
+            print("Mensaje recibido en el tópico {}: {}".format(topic, msg))
+            if topic == b'estado/virtual':
+                print("Mensaje en el tópico estado/virtual: {}".format(msg))
+                if msg == b'1' or msg == '1':  # Añade esta condición para manejar bytes o cadenas
+                    print("Encendiendo LED desde el dashboard")
+                    led.value(1)
+                    sonido(1915, 0.2)
+                    sonido(1700, 0.2)
+                    sonido(1915, 0.2)
+                    sonido(1700, 0.2)
+                    sonido(1915, 0.2)
+                    sonido(1700, 0.2)
+                    sonido(1915, 0.2)
+                    sonido(1700, 0.2)
+                    sonido(1915, 0.2)
+                    sonido(1700, 0.2)
+                    sonido(1915, 0.2)
+                    sonido(1700, 0.2)
+                elif msg == b'0' or msg == '0':  # Añade esta condición para manejar bytes o cadenas
+                    print("Apagando LED desde el dashboard")
+                    buzzer.duty(0)
+                    led.value(0)
+        
+        
+        # Conectar al servidor MQTT y suscribirse a un tema
+        def connect_mqtt():
+            client = MQTTClient(client_id, mqtt_server)
+            client.set_callback(mqtt_callback)
+            client.connect()
+            client.subscribe(topicvirtual)
+            print('Conectado al servidor MQTT y suscrito a', topicvirtual)
+            return client
+        
+        def alarma(hour):
+            if 1 <= hour <= 16:
+                led.value(1)
+                sonido(1915, 0.2)
+                sonido(1700, 0.2)
+                sonido(1915, 0.2)
+                sonido(1700, 0.2)
+                sonido(1915, 0.2)
+                sonido(1700, 0.2)
+                sonido(1915, 0.2)
+                sonido(1700, 0.2)
+                sonido(1915, 0.2)
+                sonido(1700, 0.2)
+                sonido(1915, 0.2)
+                sonido(1700, 0.2)
+                time.sleep(6)
+                buzzer.duty(0)
+                led.value(0)
+        
+        # Mandar el estado del boton
+        
+        # Mandar el estado del botón
+        def publicarPuerta(client):
+            estadoPrev = boton.value()
+            while True:
+                estadoAct = boton.value()
+                if estadoPrev != estadoAct:
+                    estado = "abierta" if estadoAct == 0 else "cerrada"
+                    current_time = time.localtime()
+                    year = current_time[0]
+                    month = current_time[1]
+                    day = current_time[2]
+                    hour = current_time[3]
+                    minute = current_time[4]
+                    alarma(hour)
+                    fecha_formateada = "{:04d}-{:02d}-{:02d}".format(year, month, day)
+                    hora_formateada = "{:02d}:{:02d}".format(hour, minute)
+                    msg = {'estado': estado, 'fecha': fecha_formateada, 'hora': hora_formateada}
+                    client.publish(topicboton, json.dumps(msg))
+                    print(msg)
+                    estadoPrev = estadoAct
+                    # Espera a que cambie el estado del botón para volver a comprobar
+                    while boton.value() == estadoAct:
+                        time.sleep(0.1)
+                else:
+                    time.sleep(0.1)
+                time.sleep(0.1)
+        
+        # Main loop
+        def main():
+            connect_wifi()
+            client = connect_mqtt()
+            try:
+                while True:
+                    client.check_msg()
+                    publicarPuerta(client)
+                    time.sleep(0.1) 
+            finally:
+                client.disconnect()
+        
+        if __name__ == "__main__":
+            main()
+
+
+
