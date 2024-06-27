@@ -4,8 +4,8 @@
 - Maribel Ramírez Torres  1222100479
 
 ## Carta de liberación del proyecto
-![image](https://github.com/Marib117uwu/Security_System/assets/135056294/60707596-2755-4a1b-97aa-57641d5d0aac)
-![image](https://github.com/Marib117uwu/Security_System/assets/135056294/867b0cf3-309d-4c09-ad88-d0e205a361d7)
+![image](https://github.com/Marib117uwu/Security_System/assets/135056294/7dc6fe49-b3a6-4fa6-ae2e-fd06af977968)
+
 
 ## Lista del Hardware utilizado
 | Id | Componente   |             Descripción                          | Imagen                                                                                                       | Cantidad | Costo total |
